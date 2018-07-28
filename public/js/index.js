@@ -12,7 +12,7 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
+      url: "https://ponte-al-tino.herokuapp.com/api/",
       data: JSON.stringify(example)
     });
   },
