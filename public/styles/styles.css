@@ -3,5 +3,56 @@
 }
 
 body {
-  background-color: #5EEED3;
+  background-color: #5EDDD3;
+}
+
+.branding {
+  width: 100%;
+  margin-top: 5%; 
+}
+
+h1 {
+  color: white;
+  font-size: 110%;
+  text-align: center;
+}
+
+.tino-logo{
+  width: auto;
+  height: 12%;
+  position: fixed;
+  top: 5%;
+  left: 25%;
+}
+
+button {
+  background-color: #92E8DE;
+  color: white;
+  position: absolute;
+  top: 30%;
+}
+
+#btn-mov {
+  margin-top: 18%;
+}
+
+figure {
+  position: absolute;
+  top: 50%;
+  background-color: #92E8DE;
+  display: block;
+  width: 35%;
+  height: 10%;
+}
+
+i {
+  font-size: 50px;
+  margin-left: 30%;
+  margin-top: 5%;
+}
+
+footer {
+  position: fixed;
+  bottom: 5%;
+  color: white;
 }
