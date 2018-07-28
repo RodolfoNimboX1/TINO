@@ -30,6 +30,7 @@ module.exports = function (sequelize, DataTypes) {
           len: [1]
         }
       },
+      //Direccion fiscal
       dirf: {
         type: DataTypes.STRING(1234),
         allowNull: false,
