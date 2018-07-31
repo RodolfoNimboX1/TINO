@@ -7,36 +7,57 @@ body {
 }
 
 @media (min-width: 320px) and (max-width: 414px) {
+  /* Branding */
   .branding {
     width: 100%;
-    margin-top: 5%; 
   }
   
   h5 {
     color: white;
-    text-align: center;
+    position: absolute;
+    top: 20%;
+    left: 30%;
   }
   
   .tino-logo{
     width: auto;
     height: 20%;
     position: absolute;
-    top: 10%;
+    top: 0%;
     left: 27%;
   } 
 
-  section {
-    margin-left: 5%;
-    margin-right: 5%;
+  footer {
+    position: fixed;
+    bottom: 0%;
+    color: white;
+    width: 100%;
+    text-align: center;
   }
 
+  /* New button */
+  #new {
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    background-color: #B0EDE4;
+    width: 27%;
+    height: 15%;
+    border-radius: 50%;
+    color: #5EDDD3;
+    text-align: center;
+    font-size: 25px;
+  }
+
+/* index section */
   button {
     background-color: #92E8DE;
     color: white;
     position: absolute;
     top: 35%;
-    left: 0%;
+    left: 3%;
     border-radius: 5%;
+    width: 94% !important;
   }
   
   #btn-mov {
@@ -63,23 +84,33 @@ body {
     left: 3%;
   }
 
-  #new {
+  /* clients section */
+  #client-list {
+    display: block;
+    width: 91%;
+    height: 53%;
+    background-color:#92E8DE;
     position: fixed;
-    bottom: 14%;
-    right: 5%;
-    background-color: #B0EDE4;
-    width: 27%;
-    height: 15%;
-    border-radius: 50%;
-    color: #5EDDD3;
-    text-align: center;
+    top: 20%;
+    border-radius: 5%;
   }
 
-  footer {
-    position: fixed;
-    bottom: 1%;
-    color: white;
-    width: 100%;
-    text-align: center;
+  .clients {
+    align-items: center;
   }
+
+  .client-item {
+    background-color: #5EDDD3;
+    color: white;
+    align-items: center;
+    margin: 5%;
+    padding: 5%;
+    border-radius: 5%;
+  }
+
+  .elip-menu {
+    font-size: 30px;
+    float: right;
+  }
+
 }
