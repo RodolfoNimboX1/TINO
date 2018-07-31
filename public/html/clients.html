@@ -18,17 +18,22 @@
         <!--Branding-->
         <header class="branding">
             <img src="../images/tino-logo.png" class="tino-logo" alt="tino-logo">
+            <h5>CLIENTS</h5>
         </header>
         <!--Client Section-->
         <section>
-        <div id="client-list">
+        <div id="client-list" data-spy="scroll">
             <ul id="client-table">
                 <!--Example 1-->
                 <li class="clients">
                     <div class="client-item">
-                        <element class="elip-menu">
-                                <i class="fas fa-ellipsis-v"></i>
-                        </element>
+                            <div class="dropdown">
+                            <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="#">See Client Profile</a>
+                                    <a class="dropdown-item" href="#">Download Ticket</a>
+                            </div>
                         <span>Rodolfo Schaefer Resines</span><br>
                         <span>81 80299418</span><br>
                         <span>rodolfo.sresines@gmail.com</span>
@@ -38,22 +43,70 @@
                 <!--Example 2-->
                 <li class="clients">
                         <div class="client-item">
-                            <element class="elip-menu">
-                                    <i class="fas fa-ellipsis-v"></i>
-                            </element>
+                            <div class="dropdown">
+                            <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="#">See Client Profile</a>
+                                    <a class="dropdown-item" href="#">Download Ticket</a>
+                            </div>
                             <span>Rodolfo Schaefer Resines</span><br>
                             <span>81 80299418</span><br>
                             <span>rodolfo.sresines@gmail.com</span>
                         </div>
-                    </li>
+                </li>
+                
+                <!--Example 3-->
+                <li class="clients">
+                        <div class="client-item">
+                            <div class="dropdown">
+                            <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="#">See Client Profile</a>
+                                    <a class="dropdown-item" href="#">Download Ticket</a>
+                            </div>
+                            <span>Rodolfo Schaefer Resines</span><br>
+                            <span>81 80299418</span><br>
+                            <span>rodolfo.sresines@gmail.com</span>
+                        </div>
+                </li>
+
+                <!--Example 4-->
+                <li class="clients">
+                        <div class="client-item">
+                            <div class="dropdown">
+                            <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="#">See Client Profile</a>
+                                    <a class="dropdown-item" href="#">Download Ticket</a>
+                            </div>
+                            <span>Rodolfo Schaefer Resines</span><br>
+                            <span>81 80299418</span><br>
+                            <span>rodolfo.sresines@gmail.com</span>
+                        </div>
+                </li>
             </ul>
         
         </div>
         <!--Menu Section-->    
             <div class="float-right">
-                <element class="figure" id="new">
-                    <i class="fas fa-plus" style="margin-left: 5%; margin-top: 35%; font-weight: bold;">NEW</i>
+                <element class="figure" id="menu" data-toggle="modal" data-target="#exampleModalCenter">
+                    <i class="fas fa-plus" style="margin-left: 5%; margin-top: 35%; font-weight: bold;">Menu</i>
                 </element>
+                <!--Modal-->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                          <div class="modal-content">
+                              <ol class="modal-options">
+                                  <li class="modal-list-item" href="#">+ Movements</li>
+                                  <li class="modal-list-item" href="#">+ Charges Report</li>
+                                  <li class="modal-list-item" href="#">+ Events Calendar</li>
+                              </ol>
+                          </div>
+                        </div>
+                </div>
             </div>
         </section>
     </div>
