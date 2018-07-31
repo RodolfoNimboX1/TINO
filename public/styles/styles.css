@@ -6,53 +6,80 @@ body {
   background-color: #5EDDD3;
 }
 
-.branding {
-  width: 100%;
-  margin-top: 5%; 
-}
+@media (min-width: 320px) and (max-width: 414px) {
+  .branding {
+    width: 100%;
+    margin-top: 5%; 
+  }
+  
+  h5 {
+    color: white;
+    text-align: center;
+  }
+  
+  .tino-logo{
+    width: auto;
+    height: 20%;
+    position: absolute;
+    top: 10%;
+    left: 27%;
+  } 
 
-h1 {
-  color: white;
-  font-size: 110%;
-  text-align: center;
-}
+  section {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 
-.tino-logo{
-  width: auto;
-  height: 12%;
-  position: fixed;
-  top: 5%;
-  left: 25%;
-}
+  button {
+    background-color: #92E8DE;
+    color: white;
+    position: absolute;
+    top: 35%;
+    left: 0%;
+    border-radius: 5%;
+  }
+  
+  #btn-mov {
+    margin-top: 18%;
+  }
+  
+  figure {
+    position: absolute;
+    top: 55%;
+    background-color: #92E8DE;
+    display: block;
+    width: 44%;
+    height: 13%;
+    color: white;
+    border-radius: 5%;
+    font-size: 60px;
+  }
+  
+  #calendar {
+    right: 3%;
+  }
 
-button {
-  background-color: #92E8DE;
-  color: white;
-  position: absolute;
-  top: 30%;
-}
+  #chart {
+    left: 3%;
+  }
 
-#btn-mov {
-  margin-top: 18%;
-}
+  #new {
+    position: fixed;
+    bottom: 14%;
+    right: 5%;
+    background-color: #B0EDE4;
+    width: 27%;
+    height: 15%;
+    border-radius: 50%;
+    color: #5EDDD3;
+    text-align: center;
+  }
 
-figure {
-  position: absolute;
-  top: 50%;
-  background-color: #92E8DE;
-  display: block;
-  width: 35%;
-  height: 10%;
-}
-
-i {
-  font-size: 50px;
-  margin-left: 30%;
-  margin-top: 5%;
-}
-
-footer {
-  position: fixed;
-  bottom: 5%;
-  color: white;
+  footer {
+    position: fixed;
+    bottom: 1%;
+    color: white;
+    width: 100%;
+    text-align: center;
+  }
 }
