@@ -2,7 +2,11 @@
   "development": {
     "username": "root",
     "password": "root",
+<<<<<<< HEAD
     "database": "myclientsdb",
+=======
+    "database": "myClientsdb",
+>>>>>>> master
     "host": "localhost",
     "dialect": "mysql"
   },

@@ -1,3 +1,177 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+body {
+  background-color: #5EDDD3;
+}
+
+@media (min-width: 320px) and (max-width: 414px) {
+  /* Branding */
+  .branding {
+    width: 100%;
+  }
+  
+  h5 {
+    color: white;
+    position: absolute;
+    top: 13%;
+    left: 31%;
+  }
+  
+  .tino-logo{
+    width: auto;
+    height: 13%;
+    position: absolute;
+    top: 0%;
+    left: 36%;
+  } 
+
+  footer {
+    position: fixed;
+    bottom: 0%;
+    color: white;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Headers */
+  h4 {
+    color: white;
+    position: absolute;
+    top: 2%;
+    left: 33%;
+  }
+
+  .jumbotron {
+    width: 100%;
+    background-color: #92E8DE;
+  }
+
+  /* Nav Bar */
+  nav {
+    position: fixed;
+    bottom: 0%;
+    background-color: #92E8DE;
+  }
+
+  i {
+    font-size: 35px;
+    color: white;
+  }
+  
+/* index section */
+  button {
+    background-color: #92E8DE;
+    color: white;
+    position: absolute;
+    top: 35%;
+    left: 3%;
+    border-radius: 5%;
+    width: 94% !important;
+  }
+  
+  #btn-mov {
+    margin-top: 18%;
+  }
+  
+  figure {
+    position: absolute;
+    top: 55%;
+    background-color: #92E8DE;
+    display: block;
+    width: 44%;
+    height: 13%;
+    color: white;
+    border-radius: 5%;
+    font-size: 60px;
+  }
+  
+  #calendar {
+    right: 3%;
+  }
+
+  #chart {
+    left: 3%;
+  }
+
+  /* clients section */
+  .search-box {
+    position: absolute;
+    top: 11%;
+  }
+
+  #client-list {
+    display: block;
+    width: 91%;
+    height: 60%;
+    background-color:#92E8DE;
+    position: fixed;
+    top: 25%;
+    border-radius: 5%;
+    overflow: scroll;
+  }
+
+  .clients {
+    align-items: center;
+  }
+
+  .client-item {
+    background-color: white;
+    color: #5EDDD3;
+    align-items: center;
+    margin: 5%;
+    padding: 5%;
+  }
+
+  /* Modal */
+  #dropdownMenuLink {
+    color: #5EDDD3;;
+    font-size: 30px;
+    float: right;
+  }
+  
+  .dropdown-item {
+    color: #5EDDD3;
+  }
+
+  .modal-options {
+    color: #5EDDD3;
+  }
+
+    /* new client section */
+    form {
+      color: white;
+    }
+
+    #client-form {
+      position: absolute;
+      top: 10%;
+      left: 0%;
+      overflow: scroll;
+    }
+
+    /* Client Profile */
+    .general-info {
+      background-color: #92E8DE;
+      height: 200px;
+      color: white;
+      padding: 5%;
+      border-radius: 5%;
+    }
+
+    #client-notes {
+      overflow: scroll;
+      height: 60%;
+      background-color: white;
+      color: #5EDDD3;
+    }
+
+    .client-movements {
+      background-color: #92E8DE;
+      height: 190px;
+      padding: 5%;
+      border-radius: 5%;
+      overflow: scroll;
+    }
+}

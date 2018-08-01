@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS myclientsdb;
-CREATE DATABASE myclientsdb;
+DROP DATABASE IF EXISTS myClientsdb;
+CREATE DATABASE myClientsdb;
 
-DROP DATABASE IF EXISTS myclientsdb;
-CREATE DATABASE myclientsdb;
+DROP DATABASE IF EXISTS myClientsdb;
+CREATE DATABASE myClientsdb;
