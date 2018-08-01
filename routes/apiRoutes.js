@@ -32,7 +32,7 @@ module.exports = function(app) {
   });
 
   // Update a client
-  app.update("/api/clients/:id", function(req, res) {
+  app.put("/api/clients/:id", function(req, res) {
     db.Client.create(req.body).then(function(client) {
       res.json(client);
     });

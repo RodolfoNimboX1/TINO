@@ -5,7 +5,7 @@ module.exports = function(app) {
 
 //- GET pontealtino.com/
 app.get("/",function(req, res) {
-  res.render("index")
+  res.render("index", {name: "testname"})
 });
 
 //- GET pontealtino.com/clients
