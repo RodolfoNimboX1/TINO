@@ -3,15 +3,14 @@ var db = require("../models");
 module.exports = function(app) {
   // Get all clients
   app.get("/api/clients", function(req, res) {
-    console.log(Client);
-    db.Client.findAll({}).then(function(client) {
-      res.json(client);
+    db.client.findAll({}).then(function(clients) {
+      res.json(clients);
     });
   });
 
   // Get one client
   app.get("/api/clients/:id", function(req, res) {
-    db.Client.findOne({
+    db.client.findOne({
       where: {
         id: req.params.id
       }
