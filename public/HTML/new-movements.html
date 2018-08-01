@@ -41,14 +41,20 @@
                                 <label for="exampleFormControlInput1">Date</label>
                                 <input type="date" class="form-control" id="movement-date" placeholder="25/03/2018">
                         </div>
-                        <!--Status: Paid or not? Checkbox-->
                         <div class="form-group">
-                            <ul>
-                                <label for="exampleFormControlInput1">Payment Status</label>
-                                <br>
-                                <input type="checkbox" id="payed"><span>Payed</span>
-                                <input type="checkbox" id="pending"><span>Pending</span>
-                            </ul>
+                            <label for="exampleFormControlInput1">Payment Status</label>
+                                <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="payed" value="1" checked>
+                                        <label class="form-check-label" for="exampleRadios1">
+                                          Payed
+                                        </label>
+                                </div>
+                                <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="pending" value="2">
+                                        <label class="form-check-label" for="exampleRadios2">
+                                          Pending
+                                        </label>
+                                </div>
                         </div>
                         <div class="form-group">
                           <label for="exampleFormControlTextarea1">Movement Concept</label>

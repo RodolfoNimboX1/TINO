@@ -212,6 +212,59 @@ body {
     /* New Movement */
     #movement-form {
       position: absolute;
-      top: 25%;
+      top: 22%;
+    }
+
+    /*Reports*/
+    #report-form {
+      position: absolute;
+      top: 22%;
+      color: white;
+      overflow: scroll;
+    }
+
+    #total-movements {
+      width: 90%;
+      background-color: #92E8DE;
+      position: absolute;
+      top: 45%;
+      color: white;
+      text-align: center;
+      height: 85px;
+      padding: 3%;
+    }
+
+    #transactions {
+      font-size: 25px;
+    }
+
+    #average-ticket {
+      width: 90%;
+      background-color: #92E8DE;
+      position: absolute;
+      top: 60%;
+      color: white;
+      text-align: center;
+      height: 85px;
+      padding: 3%;
+    }
+
+    #ticket-value {
+      font-size: 25px;
+    }
+
+    #total-income {
+      width: 90%;
+      background-color: #92E8DE;
+      position: absolute;
+      top: 75%;
+      color: white;
+      text-align: center;
+      height: 85px;
+      padding: 3%;
+    }
+
+    #income {
+      font-size: 25px;
     }
 }
