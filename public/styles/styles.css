@@ -40,7 +40,7 @@ body {
     color: white;
     position: absolute;
     top: 2%;
-    left: 35%;
+    left: 33%;
   }
 
   .jumbotron {
@@ -117,17 +117,16 @@ body {
   }
 
   .client-item {
-    background-color: #5EDDD3;
-    color: white;
+    background-color: white;
+    color: #5EDDD3;
     align-items: center;
     margin: 5%;
     padding: 5%;
-    border-radius: 5%;
   }
 
   /* Modal */
   #dropdownMenuLink {
-    color: white;
+    color: #5EDDD3;;
     font-size: 30px;
     float: right;
   }
@@ -143,5 +142,36 @@ body {
     /* new client section */
     form {
       color: white;
+    }
+
+    #client-form {
+      position: absolute;
+      top: 10%;
+      left: 0%;
+      overflow: scroll;
+    }
+
+    /* Client Profile */
+    .general-info {
+      background-color: #92E8DE;
+      height: 200px;
+      color: white;
+      padding: 5%;
+      border-radius: 5%;
+    }
+
+    #client-notes {
+      overflow: scroll;
+      height: 60%;
+      background-color: white;
+      color: #5EDDD3;
+    }
+
+    .client-movements {
+      background-color: #92E8DE;
+      height: 190px;
+      padding: 5%;
+      border-radius: 5%;
+      overflow: scroll;
     }
 }
