@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     // Add code here to create a Post model
-    var Clients = sequelize.define("Clients", {
+    var Clients = sequelize.define("client", {
       // This model needs a title, a body, and a category
       fullname: {
         type: DataTypes.STRING, allowNull: false,
@@ -27,13 +27,13 @@ module.exports = function (sequelize, DataTypes) {
         }
       },
       dirf: {
-        type: DataTypes.STRING(1234)
+        type: DataTypes.STRING
       },
       createdate: {
         type: DataTypes.DATEONLY, allowNull: false,
      },
       notes: {
-        type: DataTypes.STRING(1234),
+        type: DataTypes.STRING,
       }
       
     });
