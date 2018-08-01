@@ -3,14 +3,18 @@ var db = require("../models");
 module.exports = function(app) {
   // Get all clients
   app.get("/api/clients", function(req, res) {
-    db.Client.findAll({}).then(function(client) {
-      res.json(client);
+    db.client.findAll({}).then(function(clients) {
+      res.json(clients);
     });
   });
 
   // Get one client
   app.get("/api/clients/:id", function(req, res) {
-    db.Client.findAll({}).then(function(client) {
+    db.client.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(client) {
       res.json(client);
     });
   });
@@ -40,8 +44,12 @@ module.exports = function(app) {
 
   // Delete an example by id
   app.delete("/api/clients/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
+    db.Client.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(client) {
+      res.json(client);
     });
   });
 

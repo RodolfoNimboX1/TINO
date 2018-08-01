@@ -27,13 +27,13 @@ module.exports = function (sequelize, DataTypes) {
         }
       },
       dirf: {
-        type: DataTypes.STRING(1234)
+        type: DataTypes.STRING
       },
       createdate: {
         type: DataTypes.DATEONLY, allowNull: false,
      },
       notes: {
-        type: DataTypes.STRING(1234),
+        type: DataTypes.STRING,
       }
       
     });
