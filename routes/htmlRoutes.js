@@ -20,7 +20,7 @@ app.get("/clients", function(req, res) {
 
 
 //- GET pontealtino.com/clients/:x
-app.get("/pontealtino.com/clients/:name", function(req, res) {
+app.get("/clients/:name", function(req, res) {
   db.Clients.findOne({ 
     where:  { fullname: req.params.name } 
   }).then(function(clientX) {
@@ -29,7 +29,7 @@ app.get("/pontealtino.com/clients/:name", function(req, res) {
 });
 
 //- GET pontealtino.com/newclient
-app.post("/pontealtino.com/newclient", function(req, res) {
+app.post("/newclient", function(req, res) {
   db.Clients.create(req.body).then(function(newClientdb) {
     res.json(newClientdb);
   });
@@ -37,7 +37,7 @@ app.post("/pontealtino.com/newclient", function(req, res) {
 
 
 //- GET pontealtino.com/movements
-app.get("/pontealtino.com/movements", function(req, res) {
+app.get("/movements", function(req, res) {
   db.Movements.findAll({ 
     attributes: ["shortname", "status", "concept", "dateofpayment"]
   }).then(function(allMovements) {
@@ -46,7 +46,7 @@ app.get("/pontealtino.com/movements", function(req, res) {
 });
 
 //- GET pontealtino.com/movements/:date
-app.get("/pontealtino.com/movements/:date", function(req, res) {
+app.get("/movements/:date", function(req, res) {
   db.Movements.findOne({ 
     where:  { dateofpayment: req.params.date } 
   }).then(function(datePayment) {
@@ -56,7 +56,7 @@ app.get("/pontealtino.com/movements/:date", function(req, res) {
 
 // -GET pontealtino.com/newmovement
 
-app.get("/pontealtino.com/newmovement", function(req, res) {
+app.get("/newmovement", function(req, res) {
   db.Movements.create(req.body).then(function(newMovdb) {
     res.json("newMovdb", newMovdb);
   });
