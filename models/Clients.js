@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     // Add code here to create a Post model
-    var Clients = sequelize.define("Clients", {
+    var Clients = sequelize.define("client", {
       // This model needs a title, a body, and a category
       fullname: {
         type: DataTypes.STRING, allowNull: false,

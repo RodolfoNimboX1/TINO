@@ -32,7 +32,7 @@ module.exports = function(app) {
   });
 
   // Update a client
-  app.update("/api/clients/:id", function(req, res) {
+  app.put("/api/clients/:id", function(req, res) {
     db.Client.create(req.body).then(function(client) {
       res.json(client);
     });
@@ -44,4 +44,46 @@ module.exports = function(app) {
       res.json(dbExample);
     });
   });
+
+  //GET all movements
+  app.get("/api/movements", function(req, res) {
+    db.Movements.findAll({}).then(function(movements) {
+      res.json(movements);
+    });
+  });
+
+  //GET movements filtered by name 
+  app.get("/api/movements/:id", function(req, res) {
+    db.Movements.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(movement) {
+      res.json(movement);
+    });
+  });
+
+  //Create new movement
+  app.post("/api/movements", function(req, res) {
+    db.Movements.create({
+      status: req.body.status,
+      dateofpayment: req.body.dateofpayment,
+      proxpay: req.body.proxpay,
+      amount: req.body.amount,
+      concept: req.body.cncept,
+      discount: req.body.discount
+    }).then(function(newMovement) {
+      res.json(newMovement);
+    });
+  });
+
+  // Delete a movement
+  app.delete("/api/Movements/:id", function(req, res) {
+    db.Movements.destroy({ where: { id: req.params.id } }).then(function(movements) {
+      res.json(movements);
+    });
+  });
+  
 };
+
+

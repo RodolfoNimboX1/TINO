@@ -44,7 +44,7 @@ module.exports = function (sequelize, DataTypes) {
       
     });
     Movements.associate = function(models) {
-        Movements.belongsTo(models.Clients, {
+        Movements.belongsTo(models.client, {
           foreignKey: {
             allowNull: false
           }
