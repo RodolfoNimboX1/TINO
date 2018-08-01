@@ -152,6 +152,11 @@ body {
     }
 
     /* Client Profile */
+    #client-profile{
+      overflow: scroll;
+      height: 500px;
+    }
+
     .general-info {
       background-color: #92E8DE;
       height: 200px;
@@ -169,9 +174,44 @@ body {
 
     .client-movements {
       background-color: #92E8DE;
+      color: white;
       height: 190px;
       padding: 5%;
       border-radius: 5%;
       overflow: scroll;
+    }
+
+    .client-next-movements {
+      background-color: #92E8DE;
+      height: 140px;
+      padding: 5%;
+      border-radius: 5%;
+      margin-bottom: 5%;
+    }
+
+    .movement-status {
+      color: white;
+    }
+
+    /* Movements Page */
+
+    #movements-table {
+      color: white;
+      width: 100%;
+      overflow: scroll;
+      position: absolute;
+      top: 25%;
+      left: 0%;
+      height: 300px;
+    }
+
+    .movements {
+      overflow: scroll;
+    }
+
+    /* New Movement */
+    #movement-form {
+      position: absolute;
+      top: 25%;
     }
 }
