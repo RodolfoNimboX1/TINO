@@ -31,7 +31,7 @@ app.get("/clients/:name", function(req, res) {
 //- GET pontealtino.com/newclient
 app.post("/newclient", function(req, res) {
   db.Clients.create(req.body).then(function(newClientdb) {
-    res.json(newClientdb);
+    res.render("newclient", newClientdb);
   });
 });
 
@@ -58,7 +58,7 @@ app.get("/movements/:date", function(req, res) {
 
 app.get("/newmovement", function(req, res) {
   db.Movements.create(req.body).then(function(newMovdb) {
-    res.json("newMovdb", newMovdb);
+    res.render("newmovement", newMovdb);
   });
 });
 
@@ -67,12 +67,11 @@ app.get("/report",function(req, res) {
   db.Report.findAll({}).then(function(showreport){
     res.render("report", showreport);
   })
-  res.render("report");
 });
 
 //- GET pontealtino.com/calendar
 
-
+// - CREATE PDF
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
