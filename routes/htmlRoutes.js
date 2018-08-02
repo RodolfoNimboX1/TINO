@@ -24,7 +24,7 @@ app.get("/clients/:name", function(req, res) {
   db.Clients.findOne({ 
     where:  { fullname: req.params.name } 
   }).then(function(clientX) {
-    res.render("filterclient", clientX);
+    res.render("filterclient", {name: "testname"});
   });
 });
 
