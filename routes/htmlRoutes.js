@@ -10,7 +10,7 @@ app.get("/",function(req, res) {
 
 //- GET pontealtino.com/clients
 app.get("/clients", function(req, res) {
-  db.Clients.findAll({
+  db.client.findAll({
     attributes: ["shortname", "mail", "phone"]
   }).then(function(allClients) {
     console.log(allClients);
@@ -21,7 +21,7 @@ app.get("/clients", function(req, res) {
 
 //- GET pontealtino.com/clients/:x
 app.get("/clients/:name", function(req, res) {
-  db.Clients.findOne({ 
+  db.client.findOne({ 
     where:  { fullname: req.params.name } 
   }).then(function(clientX) {
     res.render("filterclient", {name: "testname"});
@@ -30,7 +30,7 @@ app.get("/clients/:name", function(req, res) {
 
 //- GET pontealtino.com/newclient
 app.post("/newclient", function(req, res) {
-  db.Clients.create(req.body).then(function(newClientdb) {
+  db.client.create(req.body).then(function(newClientdb) {
     res.render("newclient", newClientdb);
   });
 });

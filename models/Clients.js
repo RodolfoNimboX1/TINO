@@ -21,17 +21,16 @@ module.exports = function (sequelize, DataTypes) {
         }
       },
       phone: {
-        type: DataTypes.INTEGER, allowNull: false,
+        type: DataTypes.STRING, allowNull: false,
         validate : {
-          len: [1]
+          len: [1,20],
+           isNumeric: true
         }
       },
       dirf: {
         type: DataTypes.STRING
       },
-      createdate: {
-        type: DataTypes.DATEONLY, allowNull: false,
-     },
+   
       notes: {
         type: DataTypes.STRING,
       }
