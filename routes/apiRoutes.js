@@ -21,13 +21,12 @@ module.exports = function(app) {
 
   // Create a new client
   app.post("/api/clients", function(req, res) {
-    db.Client.create({
+    db.client.create({
       fullname: req.body.fullname,
       shortname: req.body.shortname,
       mail: req.body.mail,
       phone: req.body.phone,
       dirf: req.body.dirf,
-      createdate: req.body.createdate,
       lastpay: req.body.lastpay,
       proxpay: req.body.proxpay
     }).then(function(client) {
@@ -37,14 +36,28 @@ module.exports = function(app) {
 
   // Update a client
   app.put("/api/clients/:id", function(req, res) {
-    db.Client.create(req.body).then(function(client) {
+    db.client.update({
+        fullname: req.body.fullname,
+        shortname: req.body.shortname,
+        mail: req.body.mail,
+        phone: req.body.phone,
+        dirf: req.body.dirf,
+        lastpay: req.body.lastpay,
+        proxpay: req.body.proxpay
+      },
+      { 
+        where: {
+          id: req.params.id
+        }
+      }
+    ).then(function(client) {
       res.json(client);
     });
   });
 
   // Delete an example by id
   app.delete("/api/clients/:id", function(req, res) {
-    db.Client.destroy({
+    db.client.destroy({
       where: {
         id: req.params.id
       }

@@ -2,7 +2,7 @@ require("dotenv").config();
 var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
-var pdf = require("express-pdf");
+// var pdf = require("express-pdf");
 
 var db = require("./models");
 
@@ -13,7 +13,7 @@ var PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
-app.use(pdf); 
+// app.use(pdf); 
 
 // Handlebars
 app.engine(

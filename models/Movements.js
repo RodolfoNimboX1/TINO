@@ -26,6 +26,9 @@ module.exports = function (sequelize, DataTypes) {
       amount: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        validate : {
+           isNumeric: true
+        }
       },
       concept: {
         type: DataTypes.STRING,
@@ -34,13 +37,7 @@ module.exports = function (sequelize, DataTypes) {
           len: [1]
         }
       },
-      discount: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        validate : {
-          len: [1]
-        }
-      }
+   
       
     });
     Movements.associate = function(models) {
