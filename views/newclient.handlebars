@@ -34,23 +34,23 @@
                           <textarea class="form-control" id="new-notes" rows="4"></textarea>
                         </div>
                       </form>
-                      <a class="btn" id="save-client" href="/clients/:name" role="button" style="background-color: #92E8DE; color: white;">Save Client</a>
-                      <a class="btn" id="cancel-new" href="/clients" role="button" style="background-color: #92E8DE; color: white;">Cancel</a>
+                      <a class="btn" id="save-client" onclick="location.href='/clients/:name'" role="button" style="background-color: #92E8DE; color: white;">Save Client</a>
+                      <a class="btn" id="cancel-new" onclick="location.href='/clients'" role="button" style="background-color: #92E8DE; color: white;">Cancel</a>
         </section>
     </div>
                 <!--Footer-->
                 <footer>
                         <nav class="navbar navbar-light">
-                                <a class="navbar-brand" href="/clients" id="all-clients">
+                                <a class="navbar-brand" onclick="location.href='/clients'" id="all-clients">
                                         <i class="fas fa-user-circle"></i>
                                 </a> 
-                                <a class="navbar-brand" href="/movements" id="all-movements">
+                                <a class="navbar-brand" onclick="location.href='/movements'" id="all-movements">
                                         <i class="fas fa-file-invoice-dollar"></i>
                                 </a> 
-                                <a class="navbar-brand" href="/report" id="reports">
+                                <a class="navbar-brand" onclick="location.href='/report'" id="reports">
                                         <i class="far fa-chart-bar"></i>
                                 </a>                            
-                                <a class="navbar-brand" href="/calendar" id="event-calendar">
+                                <a class="navbar-brand" onclick="location.href='/calendar'" id="event-calendar">
                                      <i class="far fa-calendar-alt"></i>
                                 </a>
                         </nav>
