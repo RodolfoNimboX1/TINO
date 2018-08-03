@@ -1,0 +1,57 @@
+    <div class="container">
+        <!--Current Section-->
+        <header class="client-section">
+            <div class="jumbotron">
+                <h4>NEW CLIENT</h4>
+            </div>    
+        </header>
+        <!--Add New Client-->
+        <section id="client-form">
+                <form>
+                        <div class="form-group">
+                          <label for="exampleFormControlInput1">Name(s)</label>
+                          <input type="text" class="form-control" id="new-name" placeholder="Tino Valentino">
+                        </div>
+                        <div class="form-group">
+                                <label for="exampleFormControlInput1">email</label>
+                                <input type="email" class="form-control" id="new-email" placeholder="tino@gmail.com">
+                        </div>
+                        <div class="form-group">
+                                <label for="exampleFormControlInput1">Phone number</label>
+                                <input type="number" class="form-control" id="new-phone" placeholder="81-8001-5870">
+                        </div>
+                        <label for="exampleFormControlInput1">Adress</label>
+                        <div class="row">
+                                <div class="col">
+                                  <input type="text" class="form-control" id="new-street" placeholder="Ruiseñores 517">
+                                </div>
+                                <div class="col">
+                                  <input type="text" class="form-control" id="new-city" placeholder="Monterrey, NL">
+                                </div>
+                              </div>
+                        <div class="form-group">
+                          <label for="exampleFormControlTextarea1">Client Notes</label>
+                          <textarea class="form-control" id="new-notes" rows="4"></textarea>
+                        </div>
+                      </form>
+                      <a class="btn" id="save-client" onclick="location.href='/clients/:name'" role="button" style="background-color: #92E8DE; color: white;">Save Client</a>
+                      <a class="btn" id="cancel-new" onclick="location.href='/clients'" role="button" style="background-color: #92E8DE; color: white;">Cancel</a>
+        </section>
+    </div>
+                <!--Footer-->
+                <footer>
+                        <nav class="navbar navbar-light">
+                                <a class="navbar-brand" onclick="location.href='/clients'" id="all-clients">
+                                        <i class="fas fa-user-circle"></i>
+                                </a> 
+                                <a class="navbar-brand" onclick="location.href='/movements'" id="all-movements">
+                                        <i class="fas fa-file-invoice-dollar"></i>
+                                </a> 
+                                <a class="navbar-brand" onclick="location.href='/report'" id="reports">
+                                        <i class="far fa-chart-bar"></i>
+                                </a>                            
+                                <a class="navbar-brand" onclick="location.href='/calendar'" id="event-calendar">
+                                     <i class="far fa-calendar-alt"></i>
+                                </a>
+                        </nav>
+                </footer>

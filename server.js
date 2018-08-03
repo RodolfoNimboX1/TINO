@@ -2,6 +2,7 @@ require("dotenv").config();
 var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
+// var pdf = require("express-pdf");
 
 var db = require("./models");
 
@@ -12,6 +13,7 @@ var PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
+// app.use(pdf); 
 
 // Handlebars
 app.engine(
@@ -25,7 +27,6 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
-
 var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
+    <title>Working version of INDEX</title>
     <!--Bootstrap-->
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
@@ -14,9 +14,37 @@
 </head>
 
 <body>
-  {{{body}}}
+    <div class="container">
+        <!--Branding-->
+        <header class="branding">
+            <img src="../images/tino-logo.png" class="tino-logo" alt="tino-logo">
+            <h5>Welcome, <span style="font-weight: 100;">Raquel</span></h5>
+        </header>
+        <!--Menu Section-->
+        <section>
+            <button href="/clients" type="button" class="btn btn-lg btn-block" id="btn-cli">CLIENTS</button>
+            <button type="button" class="btn btn-lg btn-block" id="btn-mov">MOVEMENTS</button>
 
-      <!--Bootstrap JS-->
+            <div class="float-left">
+                <figure class="figure" id="chart">
+                    <i class="far fa-chart-bar" style="margin-left: 33%; margin-top: 7%;"></i>
+                </figure>
+            </div>
+
+            <div class="float-right">
+                <figure class="figure" id="calendar">
+                    <i class="far fa-calendar-alt" style="margin-left: 33%; margin-top: 7%;"></i>
+                </figure>
+            </div>
+        </section>
+    </div>
+                <!--Footer-->
+                <footer>
+                        <p>Your personal money butler</p>
+                        <p style="font-size: 10px;">@tinocopyright_TM</p>
+                </footer>
+
+    <!--Bootstrap JS-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"

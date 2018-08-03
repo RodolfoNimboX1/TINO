@@ -1,27 +1,88 @@
+
 var db = require("../models");
 
 module.exports = function(app) {
-  // Load index page
-  app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
-  });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
+//- GET pontealtino.com/
+app.get("/",function(req, res) {
+  res.render("index", {name: "testname"})
+});
+
+//- GET pontealtino.com/clients
+app.get("/clients", function(req, res) {
+  db.client.findAll({
+    attributes: ["shortname", "mail", "phone"]
+  }).then(function(allClients) {
+    console.log(allClients);
+    res.render("allClients", allClients);
   });
+});
+
+
+//- GET pontealtino.com/clients/:x
+app.get("/clients/:name", function(req, res) {
+  db.client.findOne({ 
+    where:  { fullname: req.params.name } 
+  }).then(function(clientX) {
+    res.render("filterclient", {name: "testname"});
+  });
+});
+
+//- POST pontealtino.com/newclient
+app.get("/newclient", function(req, res) {
+  res.render("newclient");
+});
+
+//- POST pontealtino.com/newclient
+app.post("/newclient", function(req, res) {
+  db.client.create(req.body).then(function(newClientdb) {
+    res.render("newclient", newClientdb);
+  });
+});
+
+
+//- GET pontealtino.com/movements
+app.get("/movements", function(req, res) {
+  db.Movements.findAll({ 
+    attributes: ["shortname", "status", "concept", "dateofpayment"]
+  }).then(function(allMovements) {
+    res.render("movements", allMovements);
+  });
+});
+
+//- GET pontealtino.com/movements/:date
+app.get("/movements/:date", function(req, res) {
+  db.Movements.findOne({ 
+    where:  { dateofpayment: req.params.date } 
+  }).then(function(datePayment) {
+    res.render("clientProfile", datePayment);
+  });
+});
+
+// -GET pontealtino.com/newmovement
+
+app.get("/newmovement", function(req, res) {
+  db.Movements.create(req.body).then(function(newMovdb) {
+    res.render("newmovement", newMovdb);
+  });
+});
+
+//- GET pontealtino.com/reports
+app.get("/report",function(req, res) {
+  db.Report.findAll({}).then(function(showreport){
+    res.render("report", showreport);
+  })
+});
+
+//- GET pontealtino.com/calendar
+
+// - CREATE PDF
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
   });
 };
+
+
+

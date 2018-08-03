@@ -1,0 +1,69 @@
+    <div class="container">
+        <!--Current Section-->
+        <header class="movement-section">
+            <div class="jumbotron">
+                <h4>NEW MOVEMENT</h4>
+            </div>    
+        </header>
+        <!--Add New Movement-->
+        <section>
+                <form>
+                        <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Choose a Client
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                  <a class="dropdown-item">{{}}</a>
+                                </div>
+                        </div>
+            <div id="movement-form">
+                <div class="form-group" id="form-group">
+                        <label for="exampleFormControlInput1">Amount</label>
+                        <input type="number" class="form-control" id="amount-input" placeholder="300">
+                </div>
+                        <div class="form-group">
+                                <label for="exampleFormControlInput1">Date</label>
+                                <input type="date" class="form-control" id="movement-date" placeholder="25/03/2018">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Payment Status</label>
+                                <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="payed" value="1" checked>
+                                        <label class="form-check-label" for="exampleRadios1">
+                                          Payed
+                                        </label>
+                                </div>
+                                <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="pending" value="2">
+                                        <label class="form-check-label" for="exampleRadios2">
+                                          Pending
+                                        </label>
+                                </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleFormControlTextarea1">Movement Concept</label>
+                          <textarea class="form-control" id="movement-comments" rows="3"></textarea>
+                        </div>
+                      </form>
+                      <a class="btn" id="save-movement" onclick="location.href='/movements'" role="button" style="background-color: #92E8DE; color: white;">Save Movement</a>
+                      <a class="btn" id="cancel-new" onclick="location.href='/movements'" role="button" style="background-color: #92E8DE; color: white;">Cancel</a>
+            </div> <!--movement-form ends-->
+        </section>
+    </div>
+                <!--Footer-->
+                <footer>
+                        <nav class="navbar navbar-light">
+                                <a class="navbar-brand" onclick="location.href='/clients'" id="all-clients">
+                                        <i class="fas fa-user-circle"></i>
+                                </a> 
+                                <a class="navbar-brand" onclick="location.href='/movements'" id="all-movements">
+                                        <i class="fas fa-file-invoice-dollar"></i>
+                                </a> 
+                                <a class="navbar-brand" onclick="location.href='/report'" id="reports">
+                                        <i class="far fa-chart-bar"></i>
+                                </a>                            
+                                <a class="navbar-brand" onclick="location.href='/calendar'" id="event-calendar">
+                                     <i class="far fa-calendar-alt"></i>
+                                </a>
+                        </nav>
+                </footer>

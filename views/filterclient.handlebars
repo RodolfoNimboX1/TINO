@@ -1,0 +1,56 @@
+    <div class="container">
+        <!--Current Section-->
+        <header class="client-section">
+            <div class="jumbotron">
+                <h4>CLIENT PROFILE</h4>
+            </div>    
+        </header>
+        <!--Client Profile-->
+        <section>
+            <div class="general-info">
+                <span id="client-name">{{}}</span><br>
+                <span id="client-email">{{}}</span><br>
+                <span id="client-phone">{{}}</span><br>
+                <div id="client-notes">
+                    <p>
+                        {{}} 
+                    </p>
+                </div>
+            </div>
+            <a class="btn" id="edit-general-info" onclick="location.href='/newclient'" role="button" style="background-color: #92E8DE; color: white; margin-top: 3%; margin-bottom: 3%;">Edit</a>
+
+            <div class="client-next-movements">
+                    <ul class="movement-status">
+                        <li>First Payment {{}}</li>
+                        <li>Next Payment {{}}</li>
+                        <li>Amount {{}}</li>
+                        <li>Total Client Value {{}}</li>
+                    </ul>
+            </div>
+
+            <div class="client-movements">
+                <ul class="movements-list">
+                  <li>Payment from {{}}<span>{{}}</span></li>
+                </ul>
+            </div>
+            <!--Goes to All movements-->
+                <a class="btn" id="view-client-movements" onclick="location.href='/movements'" role="button" style="background-color: #92E8DE; color: white; margin-top: 3%;">View</a>
+        </section>
+    </div>
+               <!--Footer-->
+                <footer>
+                        <nav class="navbar navbar-light">
+                                <a class="navbar-brand" onclick="location.href='/clients'" id="all-clients">
+                                        <i class="fas fa-user-circle"></i>
+                                </a> 
+                                <a class="navbar-brand" onclick="location.href='/movements'" id="all-movements">
+                                        <i class="fas fa-file-invoice-dollar"></i>
+                                </a> 
+                                <a class="navbar-brand" onclick="location.href='/report'" id="reports">
+                                        <i class="far fa-chart-bar"></i>
+                                </a>                            
+                                <a class="navbar-brand" onclick="location.href='/calendar'" id="event-calendar">
+                                     <i class="far fa-calendar-alt"></i>
+                                </a>
+                        </nav>
+                </footer>
