@@ -20,25 +20,22 @@
             <a class="btn" onclick="location.href='/newclient'" id="new-client" role="button" style="background-color: #92E8DE; color: white;">+ New client</a>
         </div>
         <div id="client-list" data-spy="scroll">
-            <ul id="client-table">
+            <div id="client-table">
                 <!--Example 1-->
                 {{!-- <li class="clients">
+                <div class="clients">
                     <div class="client-item">
-                            <div class="dropdown">
-                            <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-                            </a>
-                            </div>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" onclick="location.href='/client/:name'" id="client-view">See Client Profile</a>
-                                    <a class="dropdown-item">Download Ticket</a>
-                            </div>
+                        <a id="client-view" onclick="location.href='/clients/:name'">
+                            <i class="far fa-address-card"></i>
+                        </a>
                         <span>Rodolfo Schaefer Resines</span><br>
                         <span>81 80299418</span><br>
                         <span>rodolfo.sresines@gmail.com</span>
                     </div>
                 </li> --}}
+                </div>
                 <!--Add here new clients with the above structure (see example 1)-->
-            </ul>
+            </div>
         
         </div>
         </section>
