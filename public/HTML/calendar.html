@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="../styles/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.print.css">
 </head>
+
 <body>
-    
+
+
+  <div id="calendar"></div>
 
 
 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="../../node_modules/moment/min/moment.min.js"></script>
+  <script src="../../node_modules/fullcalendar/dist/fullcalendar.min.js"></script>
+  <script type='text/javascript'>
 
 
-    <script type='text/javascript' src='fullcalendar/gcal.js'></script>
-    <script type='text/javascript'>
+    $(document).ready(function() {
+      $('#calendar').fullCalendar({
+        weekends: true  
+      });
+    });
 
-        $(function() {
-          $('#calendar').fullCalendar({
-            googleCalendarApiKey: '<AIzaSyDBziUyzbrlIk21YYQV_gyaR1afkoL7fVM>',
-            events: {
-              googleCalendarId: '5jch2mpquvhirj1reqm652nudc@group.calendar.google.com'
-            }
-          });
-        });
-        
-        </script>
+  </script>
 </body>
+
 </html>
