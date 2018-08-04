@@ -11,6 +11,7 @@ function loadClients(client){
 
   var dropdownMenuDiv = $('<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">');
   var dropdownMenuItem = $('<a class="dropdown-item" id="client-view">');
+  dropdownMenuItem.attr("id",client.id);
   dropdownMenuItem.attr("onclick", "location.href='/client/:name'");
   var dropdownItemPdf = $('<a class="dropdown-item">');
   dropdownMenuDiv.append(dropdownItemPdf);
@@ -32,25 +33,6 @@ function loadClients(client){
 }
 
 // All Clients Page
-
-// function getClients(){
-//   $.ajax({
-//     url: "/api/clients",
-//     type: "GET",
-//     dataType: "json",
-//   }).done(function(allClients){
-//     console.log(allClients);
-//     return allClients;
-//   }).then(function (clientsFound) {
-//     console.log("yeiii!")
-//     for(let i = 0; i< clientsFound.length; i ++){
-//       console.log(clientsFound[i]);
-//       var load = loadClients(clientsFound[i])  
-//       console.log(load)
-//       $("#client-table").append(load);
-//     }
-//   })
-// }
 
 function getClients(){
   return new Promise(function(resolve, reject){
@@ -81,3 +63,58 @@ function getClients(){
 }
 
 getClients();
+
+$("#save-client").click(function(event){
+  let newClient = {
+    fullname: $("#new-name").val().trim(),
+    shortname: $("#new-name").val().trim(),
+    mail: $("#new-email").val().trim(),
+    phone: $("#new-phone").val().trim(),
+    dirf: ($("#new-street").val().trim() + " " + $("#new-city").val().trim()),
+    lastpay: "",
+    proxpay: ""
+  }
+
+  $.ajax({
+      url: "/api/clients",
+      type: "post",
+      data: newClient,
+      dataType: "json",
+      cache: false,
+      success: function(data, textStatus, xhr){
+        console.log("yei");
+        console.log(textStatus);
+        resolve(data);
+      },
+      error: function(xhr, textStatus, errorThrown){
+        reject("error");
+      }
+    })
+})
+
+$("#client-item").click(function(event){
+  console.log(event);
+  let clientId = event.attr(id);
+  return new Promise(function(resolve, reject){
+    $.ajax({
+      url: "/api/clients/:id",
+      type: "get",
+      data: clientId,
+      dataType: "json",
+      cache: false,
+      success: function(data, textStatus, xhr){
+        console.log("yei");
+        console.log(data);
+        resolve(data);
+      },
+      error: function(xhr, textStatus, errorThrown){
+        reject("error");
+      }
+    })
+  }).then(function(data, err){
+    $("#client-name").text(data.fullname);
+    $("#client-email").text(data.email);
+    $("#client-phone").text(data.phone);
+    $("#client-notes").text(data.fullname);
+  })
+})
