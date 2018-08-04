@@ -28,7 +28,12 @@ app.get("/clients/:name", function(req, res) {
   });
 });
 
-//- GET pontealtino.com/newclient
+//- POST pontealtino.com/newclient
+app.get("/newclient", function(req, res) {
+  res.render("newclient");
+});
+
+//- POST pontealtino.com/newclient
 app.post("/newclient", function(req, res) {
   db.client.create(req.body).then(function(newClientdb) {
     res.render("newclient", newClientdb);
