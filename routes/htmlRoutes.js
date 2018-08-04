@@ -44,9 +44,9 @@ app.post("/newclient", function(req, res) {
 //- GET pontealtino.com/movements
 app.get("/movements", function(req, res) {
   db.Movements.findAll({ 
-    attributes: [ "status", "concept", "dateofpayment"]
+    attributes: ["status", "concept", "dateofpayment"]
   }).then(function(allMovements) {
-    res.render("movements", allMovements);
+    res.render("allMovements", allMovements);
   });
 });
 

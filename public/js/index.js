@@ -42,7 +42,7 @@ function getClients(){
       dataType: "json",
       cache: false,
       success: function(data, textStatus, xhr){
-        console.log("yei");
+        console.log("works");
         console.log(data);
         resolve(data);
       },
@@ -60,8 +60,52 @@ function getClients(){
     }
     return data;
   })
-}
+};
 
+function loadMovements(movement){
+      var tableRow = $("<tr>");
+      var dataAmount = $("<td>").text(movement.amount);
+      var dataStatus = $("<td>").text(movement.status);
+      var dataConcept = $("<td>").text(movement.fullname);
+      var dataDate = $("<td>").text(movement.dateofpayment);
+      tableRow.append(dataAmount);
+      tableRow.append(dataStatus);
+      tableRow.append(dataConcept);
+      tableRow.append(dataDate);
+      
+
+  return tableRow;
+}
+// get movements 
+function getMovements(){
+  return new Promise(function(resolve, reject){
+    $.ajax({
+      url: "/api/movements",
+      type: "get",
+      dataType: "json",
+      cache: false,
+      success: function(data, textStatus, xhr){
+        console.log("works");
+        console.log(data);
+        resolve(data);
+      },
+      error: function(xhr, textStatus, errorThrown){
+        reject("error");
+      }
+    })
+  }).then(function(data, err){
+    console.log(data);
+    for(let i = 0; i< data.length; i ++){
+      console.log(data[i]);
+      var load = loadMovements(data[i])  
+      console.log(load)
+      $("#client-table").append(loadMovements);
+    }
+    return data;
+  })
+};
+
+getMovements();
 getClients();
 
 $("#save-client").click(function(event){
