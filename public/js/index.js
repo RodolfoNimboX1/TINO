@@ -11,6 +11,7 @@ function loadClients(client){
 
   var dropdownMenuDiv = $('<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">');
   var dropdownMenuItem = $('<a class="dropdown-item" id="client-view">');
+  dropdownMenuItem.attr("id",client.id);
   dropdownMenuItem.attr("onclick", "location.href='/client/:name'");
   var dropdownItemPdf = $('<a class="dropdown-item">');
   dropdownMenuDiv.append(dropdownItemPdf);
@@ -89,4 +90,31 @@ $("#save-client").click(function(event){
         reject("error");
       }
     })
+})
+
+$("#client-item").click(function(event){
+  console.log(event);
+  let clientId = event.attr(id);
+  return new Promise(function(resolve, reject){
+    $.ajax({
+      url: "/api/clients/:id",
+      type: "get",
+      data: clientId,
+      dataType: "json",
+      cache: false,
+      success: function(data, textStatus, xhr){
+        console.log("yei");
+        console.log(data);
+        resolve(data);
+      },
+      error: function(xhr, textStatus, errorThrown){
+        reject("error");
+      }
+    })
+  }).then(function(data, err){
+    $("#client-name").text(data.fullname);
+    $("#client-email").text(data.email);
+    $("#client-phone").text(data.phone);
+    $("#client-notes").text(data.fullname);
+  })
 })
