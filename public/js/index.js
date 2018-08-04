@@ -3,7 +3,7 @@ function loadClients(client){
   //creates an element like Example 1 in allClients.handlebars
   var clientList = $("<li class='clients'>");
   var clientListDiv = $("<div class='client-item'");
-  listItem.append(clientListDiv);
+  clientList.append(clientListDiv);
 
   var dropdownDiv = $("<div class='dropdown'");
   var dropdownBtn = $('<a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">');
@@ -27,9 +27,9 @@ function loadClients(client){
   clientListDiv.append(clientMail);
   clientListDiv.append(dropdownMenuDiv);
   clientListDiv.append(dropdownDiv);
-  clients.append(clientListDiv);
+  client.append(clientListDiv);
   return clientList;
- 
+  $("#client-table").append(clientList); 
 }
 
 // All Clients Page
@@ -41,13 +41,15 @@ function getClients(){
     dataType: "json",
   }).done(function(allClients){
     console.log(allClients);
-  // return allClients;
+   return allClients;
   }).then(function (clientsFound) {
     console.log("yeiii!")
-    for(i; i< clientsFound.lenght; i ++){
+    for(let i = 0; i< clientsFound.length; i++){
+      console.log("entro")
         $("#client-table").append(loadClients(clientsFound[i]));
     }
   })
-}
+};
 
 getClients();
+
