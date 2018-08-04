@@ -19,6 +19,7 @@
     "fullcalendar": "^3.9.0",
     "gcal": "^1.0.3",
     "googleapis": "^27.0.0",
+    "mysql": "^2.16.0",
     "hbs": "^4.0.1",
     "moment": "^2.22.2",
     "mysql2": "^1.5.3",
