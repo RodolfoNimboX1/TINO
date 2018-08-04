@@ -20,10 +20,11 @@ app.get("/clients", function(req, res) {
 
 
 //- GET pontealtino.com/clients/:x
-app.get("/clients/:name", function(req, res) {
-  db.client.findOne({ 
-    where:  { fullname: req.params.name } 
-  }).then(function(clientX) {
+app.get("/clients/:id", function(req, res) {
+  db.client.findOne({   
+    where:  { id: req.params.id } 
+  }).then(function(client) {
+    console.log(client);
     res.render("filterclient", {name: "testname"});
   });
 });
@@ -44,9 +45,9 @@ app.post("/newclient", function(req, res) {
 //- GET pontealtino.com/movements
 app.get("/movements", function(req, res) {
   db.Movements.findAll({ 
-    attributes: ["shortname", "status", "concept", "dateofpayment"]
+    attributes: ["status", "concept", "dateofpayment"]
   }).then(function(allMovements) {
-    res.render("movements", allMovements);
+    res.render("allMovements", allMovements);
   });
 });
 
@@ -83,6 +84,3 @@ app.get("/report",function(req, res) {
     res.render("404");
   });
 };
-
-
-
