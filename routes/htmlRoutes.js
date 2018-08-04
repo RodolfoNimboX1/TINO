@@ -8,6 +8,7 @@ app.get("/",function(req, res) {
   res.render("index", {name: "testname"})
 });
 
+
 //- GET pontealtino.com/clients
 app.get("/clients", function(req, res) {
   db.client.findAll({
