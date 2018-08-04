@@ -2,10 +2,10 @@
 function loadClients(client){
   //creates an element like Example 1 in allClients.handlebars
   var clientList = $("<li class='clients'>");
-  var clientListDiv = $("<div class='client-item'");
+  var clientListDiv = $("<div class='client-item'>");
   clientList.append(clientListDiv);
 
-  var dropdownDiv = $("<div class='dropdown'");
+  var dropdownDiv = $("<div class='dropdown'>");
   var dropdownBtn = $('<a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">');
   dropdownDiv.append(dropdownBtn);
 
@@ -27,27 +27,37 @@ function loadClients(client){
   clientListDiv.append(clientMail);
   clientListDiv.append(dropdownMenuDiv);
   clientListDiv.append(dropdownDiv);
-  client.append(clientListDiv);
-  return clientList;
-  $("#client-table").append(clientList); 
+  return clientListDiv;
+ 
 }
 
 // All Clients Page
 
 function getClients(){
-  $.ajax({
-    url: "/api/clients",
-    type: "GET",
-    dataType: "json",
-  }).done(function(allClients){
-    console.log(allClients);
-   return allClients;
-  }).then(function (clientsFound) {
-    console.log("yeiii!")
-    for(let i = 0; i< clientsFound.length; i++){
-      console.log("entro")
-        $("#client-table").append(loadClients(clientsFound[i]));
+  return new Promise(function(resolve, reject){
+    $.ajax({
+      url: "/api/clients",
+      type: "get",
+      dataType: "json",
+      cache: false,
+      success: function(data, textStatus, xhr){
+        console.log("yei");
+        console.log(data);
+        resolve(data);
+      },
+      error: function(xhr, textStatus, errorThrown){
+        reject("error");
+      }
+    })
+  }).then(function(data, err){
+    console.log(data);
+    for(let i = 0; i< data.length; i ++){
+      console.log(data[i]);
+      var load = loadClients(data[i])  
+      console.log(load)
+      $("#client-table").append(load);
     }
+    return data;
   })
 };
 
