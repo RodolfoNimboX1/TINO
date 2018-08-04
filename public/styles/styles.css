@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #5EDDD3;
+  background-color: #5EDDD3 !important;
 }
 
 @media (min-width: 320px) and (max-width: 414px) {
@@ -13,7 +13,7 @@ body {
   }
   
   h5 {
-    color: white;
+    color: white !important;
     position: absolute;
     top: 13%;
     left: 31%;
@@ -37,7 +37,7 @@ body {
 
   /* Headers */
   h4 {
-    color: white;
+    color: white !important;
     position: absolute;
     top: 2%;
     left: 33%;
@@ -45,7 +45,7 @@ body {
 
   .jumbotron {
     width: 100%;
-    background-color: #92E8DE;
+    background-color: #92E8DE !important;
   }
 
   /* Nav Bar */
@@ -57,7 +57,7 @@ body {
 
   i {
     font-size: 35px;
-    color: white;
+    color: teal;
   }
   
 /* index section */
@@ -124,19 +124,11 @@ body {
     padding: 5%;
   }
 
-  /* Modal */
-  #dropdownMenuLink {
-    color: #5EDDD3;;
+  /* Dropdown menu */
+  #client-view {
+    color: #5EDDD3;
     font-size: 30px;
     float: right;
-  }
-  
-  .dropdown-item {
-    color: #5EDDD3;
-  }
-
-  .modal-options {
-    color: #5EDDD3;
   }
 
     /* new client section */
@@ -149,6 +141,7 @@ body {
       top: 10%;
       left: 0%;
       overflow: scroll;
+      padding: 0 20px;
     }
 
     /* Client Profile */
@@ -175,9 +168,13 @@ body {
     .client-movements {
       background-color: #92E8DE;
       color: white;
-      height: 190px;
+      height: 170px;
       padding: 5%;
       border-radius: 5%;
+      overflow: scroll;
+    }
+
+    #client-profile {
       overflow: scroll;
     }
 
