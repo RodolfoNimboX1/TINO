@@ -110,6 +110,7 @@ module.exports = function(app) {
     console.log("aqui andamos y no nos rajamos");
     calendar.s().then(function() {
       console.log(calendar.e)
+      return(calendar.e);
     });
   });
 };

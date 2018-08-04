@@ -93,7 +93,9 @@ function listEvents(auth) {
   });
 }
 
-module.exports = {
+var Calendario = {
   s: start,
   e: eventos
 };
+
+module.exports = Calendario;
