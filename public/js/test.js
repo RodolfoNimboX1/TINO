@@ -32,9 +32,21 @@ function loadClients(client){
      
 }
 
-// All Clients Page
+$.ajax({
+    url: "/api/clients",
+    type: "GET",
+    dataType: "json",
+}).done(function(allClients){
+    console.log(allClients);
+    // return allClients;
+}).then(function (clientsFound) {
+    console.log("yeiii!")
+    for(i; i< clientsFound.lenght; i ++){
+        $("#client-table").append(loadClients(clientsFound[i]));
+    }
+})
 
-<<<<<<< HEAD
+// All Clients Page
     var clientSearchBar = $("#search-client").val().trim();
     var clientFound = {
         fullname: clientSearchBar,
@@ -91,24 +103,6 @@ $("#inputGroup-sizing-sm").on("click", function() {
         status: this.status,
         concept: this.concept,
         dateofpayment: this.dateofpayment
-=======
-
-$.ajax({
-    url: "/api/clients",
-    type: "GET",
-    dataType: "json",
-}).done(function(allClients){
-    console.log(allClients);
-    // return allClients;
-}).then(function (clientsFound) {
-    console.log("yeiii!")
-    for(i; i< clientsFound.lenght; i ++){
-        $("#client-table").append(loadClients(clientsFound[i]));
->>>>>>> master
-    }
-})
-    
-
 
 
 // $("#inputGroup-sizing-sm").on("click", function () {
