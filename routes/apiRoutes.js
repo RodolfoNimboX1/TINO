@@ -1,5 +1,4 @@
 var db = require("../models");
-var calendar = require("../utiles/calendar.js");
 
 module.exports = function(app) {
   // Get all clients
@@ -22,12 +21,13 @@ module.exports = function(app) {
 
   // Create a new client
   app.post("/api/clients", function(req, res) {
-    db.client.create({
+    db.Client.create({
       fullname: req.body.fullname,
       shortname: req.body.shortname,
       mail: req.body.mail,
       phone: req.body.phone,
       dirf: req.body.dirf,
+      createdate: req.body.createdate,
       lastpay: req.body.lastpay,
       proxpay: req.body.proxpay
     }).then(function(client) {
@@ -37,28 +37,14 @@ module.exports = function(app) {
 
   // Update a client
   app.put("/api/clients/:id", function(req, res) {
-    db.client.update({
-        fullname: req.body.fullname,
-        shortname: req.body.shortname,
-        mail: req.body.mail,
-        phone: req.body.phone,
-        dirf: req.body.dirf,
-        lastpay: req.body.lastpay,
-        proxpay: req.body.proxpay
-      },
-      { 
-        where: {
-          id: req.params.id
-        }
-      }
-    ).then(function(client) {
+    db.Client.create(req.body).then(function(client) {
       res.json(client);
     });
   });
 
   // Delete an example by id
   app.delete("/api/clients/:id", function(req, res) {
-    db.client.destroy({
+    db.Client.destroy({
       where: {
         id: req.params.id
       }
@@ -107,9 +93,9 @@ module.exports = function(app) {
   });
   
   app.get("/api/calendar/events", function(req, res) {
-    console.log("aqui andamos y no nos rajamos");
     calendar.s().then(function() {
       console.log(calendar.e)
+      return(calendar.e);
     });
   });
 };
