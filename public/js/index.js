@@ -123,6 +123,7 @@ function getMovements(){
   // })
 };
 getClients();
+getMovements();
 
 $("#save-client").click(function(event){
   let newClient = {
