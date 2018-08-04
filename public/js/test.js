@@ -4,44 +4,19 @@ $("#inputGroup-sizing-sm").on("click", function() {
     var clientSearchBar = $("#search-client").val().trim();
     var clientFound = {
         fullname: clientSearchBar,
-        phone: this.phone,
-        mail: this.mail
     }
 
     $.ajax({
-        method: "GET",
-        data: clientFound
-    }).then(function(response) {
-        $("#client-table").clear().draw();
-
-        //creates an element like Example 1 in allClients.handlebars
-        var clients = $("<li class='clients'>");
-        var client_item = $("<div class='client-item'");
-        clients.append(client_item);
-        var dropdown = $("<div class='dropdown'");
-        var dropdown_toggle = $('<a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">');
-        dropdown.append(dropdown_toggle);
-        var dropdown_menu = $('<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">');
-        var dropdown_item = $('<a class="dropdown-item" id="client-view">');
-        dropdown_item.attr("onclick", "location.href='/client/:name'");
-        var dropdown_pdf = $('<a class="dropdown-item">');
-        dropdown_menu.append(dropdown_pdf);
-        dropdown_menu.append(dropdown_item);
-        var clientName = $("<span>").text(clientFound.fullname);
-        var clientPhone = $("<span>").text(clientFound.phone);
-        var clientMail = $("<span>").text(clientFound.mail);
-        var br = $("<br>");
-        clientName.append(br);
-        clientPhone.append(br);
-        client_item.append(clientName);
-        client_item.append(clientPhone);
-        client_item.append(clientMail);
-        client_item.append(dropdown_menu);
-        client_item.append(dropdown);
-        clients.append(client_item);
-        $("#client-table").append(clients);
-
-    });// ajax ends
+        url: "/api/clients/:" + fullname,
+        type: "GET",
+        data: clientFound,
+        dataType: "json",
+    }).done(function(filterClient){
+        console.log(filterClient);
+        return filterClient;
+    }).then(function (uniqueClient) {
+    
+    });
 });
 
 // Submit new Client POST

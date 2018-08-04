@@ -19,6 +19,18 @@ module.exports = function(app) {
     });
   });
 
+    // Get one client
+    app.get("/api/clients/:name", function(req, res) {
+      db.client.findOne({
+        where: {
+          fullname: req.params.name
+        }
+      }).then(function(client) {
+        res.json(client);
+      });
+    });
+  
+
   // Create a new client
   app.post("/api/clients", function(req, res) {
     db.client.create({
