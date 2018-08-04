@@ -92,6 +92,12 @@ module.exports = function(app) {
     });
   });
   
+  app.get("/api/calendar/events", function(req, res) {
+    calendar.s().then(function() {
+      console.log(calendar.e)
+      return(calendar.e);
+    });
+  });
 };
 
 
