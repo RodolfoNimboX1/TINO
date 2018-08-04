@@ -1,35 +1,25 @@
 
 function loadClients(client){
   //creates an element like Example 1 in allClients.handlebars
-  var clientList = $("<li class='clients'>");
   var clientListDiv = $("<div class='client-item'>");
-  clientList.append(clientListDiv);
-
-  var dropdownDiv = $("<div class='dropdown'>");
-  var dropdownBtn = $('<a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">');
-  dropdownDiv.append(dropdownBtn);
-
-  var dropdownMenuDiv = $('<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">');
-  var dropdownMenuItem = $('<a class="dropdown-item" id="client-view">');
-  dropdownMenuItem.attr("id",client.id);
-  dropdownMenuItem.attr("onclick", "location.href='/client/:name'");
-  var dropdownItemPdf = $('<a class="dropdown-item">');
-  dropdownMenuDiv.append(dropdownItemPdf);
-  dropdownMenuDiv.append(dropdownMenuItem);
+  var link = $("<a>");
+  link.attr("id","client-view");
+  link.attr("onclick", "location.href=/clients/"+client.id);
+  var icon = $("<i>");
+  icon.addClass("far");
+  icon.addClass("fa-address-card");
+  link.append(icon);
+  clientListDiv.append(link);
 
   var clientName = $("<span>").text(client.fullname);
-  var clientPhone = $("<span>").text(client.phone);
-  var clientMail = $("<span>").text(client.mail);
-  var br = $("<br>");
-  clientName.append(br);
-  clientPhone.append(br);
   clientListDiv.append(clientName);
+  clientListDiv.append("<br>");
+  var clientPhone = $("<span>").text(client.phone);
   clientListDiv.append(clientPhone);
+  clientListDiv.append("<br>");
+  var clientMail = $("<span>").text(client.mail);
   clientListDiv.append(clientMail);
-  clientListDiv.append(dropdownMenuDiv);
-  clientListDiv.append(dropdownDiv);
   return clientListDiv;
- 
 }
 
 // All Clients Page
@@ -95,11 +85,17 @@ $("#save-client").click(function(event){
 $("#client-item").click(function(event){
   console.log(event);
   let clientId = event.attr(id);
+  loadSingleClient(clientId);
+})
+
+loadSingleClient(1)
+
+function loadSingleClient(clientId){
   return new Promise(function(resolve, reject){
+    var clienturl = "/api/clients/" + clientId;
     $.ajax({
-      url: "/api/clients/:id",
+      url: clienturl,
       type: "get",
-      data: clientId,
       dataType: "json",
       cache: false,
       success: function(data, textStatus, xhr){
@@ -113,8 +109,21 @@ $("#client-item").click(function(event){
     })
   }).then(function(data, err){
     $("#client-name").text(data.fullname);
-    $("#client-email").text(data.email);
+    $("#client-email").text(data.mail);
     $("#client-phone").text(data.phone);
-    $("#client-notes").text(data.fullname);
+    $("#client-notes").text(data.notes);
+
+    var lastPayment = $("<li>");
+    lastPayment.text("Next payment: " + "2018/08/15");
+    var nextPayment = $("<li>");
+    nextPayment.text("Last payment: " + "2018/07/15");
+    var amount = $("<li>");
+    amount.text("Amount: " + "3000");
+
+    $(".movement-status").empty();
+    $(".movement-status").append(lastPayment);
+    $(".movement-status").append(nextPayment);
+    $(".movement-status").append(amount);
+    
   })
-})
+}
