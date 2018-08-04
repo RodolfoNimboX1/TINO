@@ -47,6 +47,7 @@ module.exports = function (sequelize, DataTypes) {
           }
         });
       };
+      console.log(Movements);
     return Movements;
     
   };
