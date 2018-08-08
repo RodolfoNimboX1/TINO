@@ -21,7 +21,7 @@ module.exports = function(app) {
 
   // Create a new client
   app.post("/api/clients", function(req, res) {
-    db.Client.create({
+    db.client.create({
       fullname: req.body.fullname,
       shortname: req.body.shortname,
       mail: req.body.mail,
@@ -37,14 +37,14 @@ module.exports = function(app) {
 
   // Update a client
   app.put("/api/clients/:id", function(req, res) {
-    db.Client.create(req.body).then(function(client) {
+    db.client.create(req.body).then(function(client) {
       res.json(client);
     });
   });
 
   // Delete an example by id
   app.delete("/api/clients/:id", function(req, res) {
-    db.Client.destroy({
+    db.client.destroy({
       where: {
         id: req.params.id
       }

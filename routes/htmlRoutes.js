@@ -8,6 +8,7 @@ app.get("/",function(req, res) {
   res.render("index", {name: "testname"})
 });
 
+
 //- GET pontealtino.com/clients
 app.get("/clients", function(req, res) {
   db.client.findAll({
@@ -76,7 +77,9 @@ app.get("/report",function(req, res) {
 });
 
 //- GET pontealtino.com/calendar
-
+app.get("/calendar",function(req, res) {
+  res.render("calendar")
+});
 // - CREATE PDF
 
   // Render 404 page for any unmatched routes
