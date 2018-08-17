@@ -82,7 +82,7 @@ function getMovements(){
             // console.log(data[i], "//////////////////");
             // console.log("works until here");
             if (typeof(data[i] == "object")) {
-              $("#all-movements").append(loadMovements(data[i]));
+              $("#all-climovements").append(loadMovements(data[i]));
               
             }
             // console.log(load)
@@ -123,6 +123,7 @@ function getMovements(){
   // })
 };
 getClients();
+getMovements();
 
 $("#save-client").click(function(event){
   let newClient = {

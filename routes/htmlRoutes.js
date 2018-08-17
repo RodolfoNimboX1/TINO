@@ -76,7 +76,11 @@ app.get("/report",function(req, res) {
 });
 
 //- GET pontealtino.com/calendar
-
+app.get("/calendar", function(req, res) {
+  db.Movements.create(req.body).then(function(eventCalendar) {
+    res.render("calendar", eventCalendar);
+  });
+});
 // - CREATE PDF
 
   // Render 404 page for any unmatched routes
